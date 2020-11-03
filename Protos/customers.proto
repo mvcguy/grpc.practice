@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService1";
+
+package customers;
+
+
+service CustomersMaintenance {
+  
+  rpc GetAllCustomers (CustomersRequest) returns (stream CustomersResponse);
+
+  rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse);
+}
+
+message CustomersRequest {
+  
+}
+
+message CustomersResponse {
+  string FirstName = 1;
+  string LastName = 2;
+  string Address = 3;
+  string Phone = 4;
+  string Id = 5;
+}
+
+
+message CreateCustomerRequest {
+	string FirstName = 1;
+  string LastName = 2;
+  string Address = 3;
+  string Phone = 4;
+}
+
+message CreateCustomerResponse {
+	string Id = 1;
+}
+
