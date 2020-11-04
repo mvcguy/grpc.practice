@@ -52,6 +52,12 @@ namespace ClientAppConsole.Apps
             Console.WriteLine($"Customer update result: {result.Result}, Message: {result.Message}");
         }
 
+        public static async Task DeleteAllCustomers()
+        {
+            var result = await client.DeleteAllCustomersAsync(new DeleteAllCustomersRequest());
+            Console.WriteLine($"Delete All customers, result: {result.Result}, Message: {result.Message}");
+        }
+        
         public static string RandomString(int length = 5)
         {
             var str = string.Empty;

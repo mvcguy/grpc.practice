@@ -75,6 +75,13 @@ namespace GrpcService1.Services.CustomerSrv
             Customers[customer.Id.Value] = customer;
             return true;
         }
+
+        public async Task<bool> DeleteAllCustomers()
+        {
+            await Task.Delay(100);
+            Customers.Clear();
+            return true;
+        }
     }
 
 }

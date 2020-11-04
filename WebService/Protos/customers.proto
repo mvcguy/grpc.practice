@@ -14,6 +14,17 @@ service CustomersMaintenance {
   rpc DeleteCustomer(DeleteCustomerRequest) returns (DeleteCustomerResponse);
 
   rpc UpdateCustomer(UpdateCustomerRequest) returns (UpdateCustomerResponse);
+
+  rpc DeleteAllCustomers(DeleteAllCustomersRequest) returns (DeleteAllCustomersResponse);
+}
+
+message DeleteAllCustomersRequest{
+
+}
+
+message DeleteAllCustomersResponse{
+	string Result = 1;
+	string Message = 2;
 }
 
 message CustomersRequest {
@@ -27,7 +38,6 @@ message CustomersResponse {
   string Phone = 4;
   string Id = 5;
 }
-
 
 message CreateCustomerRequest {
 	string FirstName = 1;

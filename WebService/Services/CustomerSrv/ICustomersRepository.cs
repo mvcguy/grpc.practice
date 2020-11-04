@@ -13,6 +13,8 @@ namespace GrpcService1.Services.CustomerSrv
         Task<bool> DeleteCustomer(Guid id);
 
         Task<bool> UpdateCustomer(Customer customer);
+
+        Task<bool> DeleteAllCustomers();
     }
 
 }
