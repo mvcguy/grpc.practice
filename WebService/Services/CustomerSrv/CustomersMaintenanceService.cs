@@ -72,6 +72,17 @@ namespace GrpcService1.Services.CustomerSrv
             return new UpdateCustomerResponse { Result = "FAILURE", Message = "Internal error" };
 
         }
+
+        public override async Task<DeleteAllCustomersResponse> DeleteAllCustomers(DeleteAllCustomersRequest request, 
+            ServerCallContext context)
+        {
+            if (await repository.DeleteAllCustomers())
+                return new DeleteAllCustomersResponse { Result = "SUCCESS", Message = "All customers deleted" };
+
+            return new DeleteAllCustomersResponse { Result = "FAILURE", Message = "Internal error" };
+
+        }
+
     }
 
 }
