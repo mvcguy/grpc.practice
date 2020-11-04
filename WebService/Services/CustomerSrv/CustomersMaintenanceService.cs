@@ -1,4 +1,5 @@
 ﻿using Grpc.Core;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,6 +26,16 @@ namespace GrpcService1.Services.CustomerSrv
         {
             var id = await repository.CreateCustomer(request.ToCustomer());
             return new CreateCustomerResponse { Id = id.ToString() };
+        }
+
+        public override async Task<DeleteCustomerResponse> DeleteCustomer(DeleteCustomerRequest request, ServerCallContext context)
+        {
+            if (await repository.DeleteCustomer(Guid.Parse(request.Id)))
+            {
+                return new DeleteCustomerResponse { Id = request.Id, Result="SUCCESS" };
+            }
+
+            return new DeleteCustomerResponse { Id = string.Empty, Result="FAILURE" };
         }
     }
 

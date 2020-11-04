@@ -13,8 +13,11 @@ namespace ClientAppConsole
         {
             HelloWorldClient.Hello("Shahid");
 
-            await CustomersMaintClient.CreateCustomer(5);
-            await CustomersMaintClient.GetAllCustomers();
+            await CustomersMaintClient.CreateCustomer(2);
+            CustomersMaintClient.GetAllCustomers();
+            await Task.Delay(100);
+            await CustomersMaintClient.DeleteCustomer("e3cf5ae6-d149-4b80-8bd8-aea03f2b0754");
+            //await CustomersMaintClient.GetAllCustomers();
             Console.ReadLine();
         }
     }
@@ -63,6 +66,13 @@ namespace ClientAppConsole
                 await Task.Delay(100);
                 Console.WriteLine("Customer with ID {0} is created successfully", result.Id);
             }
+        }
+
+        public static async Task DeleteCustomer(string id)
+        {
+            var result = await client.DeleteCustomerAsync(new DeleteCustomerRequest { Id = id });
+
+            Console.WriteLine($"Customer delete Id:{id}, Result: {result.Result} ");
         }
 
         public static string RandomString(int length = 5)

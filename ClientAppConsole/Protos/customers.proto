@@ -10,6 +10,8 @@ service CustomersMaintenance {
   rpc GetAllCustomers (CustomersRequest) returns (stream CustomersResponse);
 
   rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse);
+
+  rpc DeleteCustomer(DeleteCustomerRequest) returns (DeleteCustomerResponse);
 }
 
 message CustomersRequest {
@@ -27,12 +29,25 @@ message CustomersResponse {
 
 message CreateCustomerRequest {
 	string FirstName = 1;
-  string LastName = 2;
-  string Address = 3;
-  string Phone = 4;
+	string LastName = 2;
+	string Address = 3;
+	string Phone = 4;
 }
 
 message CreateCustomerResponse {
 	string Id = 1;
+}
+
+message DeleteCustomerRequest{
+	string Id = 1;
+}
+
+message DeleteCustomerResponse{
+	string FirstName = 1;
+	string LastName = 2;
+	string Address = 3;
+	string Phone = 4;
+	string Id = 5;
+	string Result = 6;
 }
 
