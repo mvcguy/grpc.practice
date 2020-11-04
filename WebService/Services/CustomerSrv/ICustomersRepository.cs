@@ -11,6 +11,8 @@ namespace GrpcService1.Services.CustomerSrv
         Task<Guid> CreateCustomer(Customer customer);
         Task<Customer> GetCustomer(Guid id);
         Task<bool> DeleteCustomer(Guid id);
+
+        Task<bool> UpdateCustomer(Customer customer);
     }
 
 }

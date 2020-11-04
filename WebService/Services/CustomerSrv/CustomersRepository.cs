@@ -7,7 +7,7 @@ namespace GrpcService1.Services.CustomerSrv
 {
     public class CustomersRepository : ICustomersRepository
     {
-        private static ConcurrentDictionary<Guid, Customer> Customers = new ConcurrentDictionary<Guid, Customer>
+        private static readonly ConcurrentDictionary<Guid, Customer> Customers = new ConcurrentDictionary<Guid, Customer>
         (
             new Dictionary<Guid, Customer>
             {
@@ -62,10 +62,18 @@ namespace GrpcService1.Services.CustomerSrv
         public async IAsyncEnumerable<Customer> GetCustomers(params object[] args)
         {
             foreach (var item in Customers)
-            {                
+            {
                 yield return item.Value;
                 await Task.Delay(1000);
             }
+        }
+
+        public async Task<bool> UpdateCustomer(Customer customer)
+        {
+            await Task.Delay(100);
+            if (!Customers.ContainsKey(customer.Id.Value)) return false;
+            Customers[customer.Id.Value] = customer;
+            return true;
         }
     }
 

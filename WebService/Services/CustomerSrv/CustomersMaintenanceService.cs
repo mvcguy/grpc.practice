@@ -13,6 +13,7 @@ namespace GrpcService1.Services.CustomerSrv
         {
             this.repository = repository;
         }
+
         public override async Task GetAllCustomers(CustomersRequest request,
             IServerStreamWriter<CustomersResponse> responseStream, ServerCallContext context)
         {
@@ -22,20 +23,54 @@ namespace GrpcService1.Services.CustomerSrv
             }
         }
 
-        public override async Task<CreateCustomerResponse> CreateCustomer(CreateCustomerRequest request, ServerCallContext context)
+        public override async Task<CreateCustomerResponse> CreateCustomer(CreateCustomerRequest request,
+            ServerCallContext context)
         {
             var id = await repository.CreateCustomer(request.ToCustomer());
             return new CreateCustomerResponse { Id = id.ToString() };
         }
 
-        public override async Task<DeleteCustomerResponse> DeleteCustomer(DeleteCustomerRequest request, ServerCallContext context)
+        public override async Task<DeleteCustomerResponse> DeleteCustomer(DeleteCustomerRequest request,
+            ServerCallContext context)
         {
             if (await repository.DeleteCustomer(Guid.Parse(request.Id)))
             {
-                return new DeleteCustomerResponse { Id = request.Id, Result="SUCCESS" };
+                return new DeleteCustomerResponse { Id = request.Id, Result = "SUCCESS" };
             }
 
-            return new DeleteCustomerResponse { Id = string.Empty, Result="FAILURE" };
+            return new DeleteCustomerResponse { Id = string.Empty, Result = "FAILURE" };
+        }
+
+        public override async Task<UpdateCustomerResponse> UpdateCustomer(UpdateCustomerRequest request,
+            ServerCallContext context)
+        {
+            var existing = await repository.GetCustomer(Guid.Parse(request.Id));
+            if (existing == null)
+            {
+                return new UpdateCustomerResponse { Result = "FAILURE", Message = "Not found" };
+            }
+
+            //
+            // Add more validations here
+            //
+
+            if (!string.IsNullOrWhiteSpace(request.FirstName))
+                existing.FirstName = request.FirstName;
+
+            if (!string.IsNullOrWhiteSpace(request.LastName))
+                existing.LastName = request.LastName;
+
+            if (!string.IsNullOrWhiteSpace(request.Phone))
+                existing.Phone = request.Phone;
+
+            if (!string.IsNullOrWhiteSpace(request.Address))
+                existing.Address = request.Address;
+
+            if (await repository.UpdateCustomer(existing))
+                return new UpdateCustomerResponse { Result = "SUCCESS", Message = "Customer is updated" };
+
+            return new UpdateCustomerResponse { Result = "FAILURE", Message = "Internal error" };
+
         }
     }
 
