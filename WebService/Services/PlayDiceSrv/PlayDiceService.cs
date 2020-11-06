@@ -13,13 +13,13 @@ namespace WebService.Services.PlayDiceSrv
         {
             await foreach (var item in requestStream.ReadAllAsync())
             {
+                if (item.EndGame) break;
                 //
                 // client has played its dice
                 //
                 var serverResult = await RollDice();
-                await responseStream.WriteAsync(new GameResponse { ServerResult = $"Server result: {serverResult}" });                
+                await responseStream.WriteAsync(new GameResponse { ServerResult = $"Server result: {serverResult}" });
             }
-
         }
 
         public override async Task<DiceResult> RollDice(EmptyRequest request, ServerCallContext context)
@@ -30,7 +30,7 @@ namespace WebService.Services.PlayDiceSrv
 
         private Task<int> RollDice()
         {
-            var task1 = Task.Run(async() =>
+            var task1 = Task.Run(async () =>
             {
                 await Task.Delay(2000);
                 var rnd = new Random(Math.Abs(Guid.NewGuid().GetHashCode()));

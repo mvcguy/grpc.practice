@@ -56,13 +56,17 @@ namespace DiceGameConsole
                 //
                 await foreach (var item in response.ReadAllAsync())
                 {
+
+                    if (QuitSignal)
+                    {
+                        await request.WriteAsync(new GameRequest { EndGame = true });
+                        break;
+                    }
+
                     Console.WriteLine(item.ServerResult);
                     Console.WriteLine("**********************************");
 
                     await MyPlay(request);
-
-                    if (QuitSignal)
-                        break;
 
                 }
 

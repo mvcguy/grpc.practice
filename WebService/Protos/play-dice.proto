@@ -13,10 +13,12 @@ service DiceGameService{
 
 message GameRequest{
 	string ClientResult = 1;
+	bool EndGame = 2;
 }
 
 message GameResponse{
 	string ServerResult = 1;
+	bool EndGame = 2;
 }
 
 message DiceResult{
