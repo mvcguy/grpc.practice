@@ -1,0 +1,28 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "DiceGame";
+
+package dicegame;
+
+service DiceGameService{
+	rpc Start(stream GameRequest) returns (stream GameResponse);
+
+	rpc RollDice(EmptyRequest) returns (DiceResult);
+}
+
+message GameRequest{
+	string ClientResult = 1;
+}
+
+message GameResponse{
+	string ServerResult = 1;
+}
+
+message DiceResult{
+	int32 Result = 1;
+}
+
+message EmptyRequest{
+
+}
