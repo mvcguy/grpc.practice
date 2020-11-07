@@ -9,11 +9,20 @@ namespace ChannelSampleConsole
         static async Task Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            try
+            {
+                await UnboundedChannelSample.Run();
+                await BoundedChannelSample.Run();
+            }
+            catch (Exception e)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Error: {e.Message}");
+                Console.ResetColor();
+            }
 
-            await BoundedChannelSample.Run();
-
+            Console.WriteLine("Press any key to exit");
+            Console.ReadKey();
         }
-
-
     }
 }
