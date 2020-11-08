@@ -8,7 +8,7 @@ namespace ChannelSampleConsole
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello World! test");
+            Console.WriteLine("Hello World!");
             try
             {
                 await UnboundedChannelSample.Run();
