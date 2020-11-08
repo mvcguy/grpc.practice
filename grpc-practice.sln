@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientAppConsole", "ClientA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiceGameConsole", "DiceGameConsole\DiceGameConsole.csproj", "{5E5040E2-97E6-42E3-BBB9-06549F4C4750}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChannelSampleConsole", "ChannelSampleConsole\ChannelSampleConsole.csproj", "{C20EA38D-62BB-4D22-AE05-6141D081F909}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChannelSampleConsole", "ChannelSampleConsole\ChannelSampleConsole.csproj", "{C20EA38D-62BB-4D22-AE05-6141D081F909}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntercepterDemoConsole", "IntercepterDemoConsole\IntercepterDemoConsole.csproj", "{22385B4D-D5D7-4153-B9A5-E00B0EA2ADE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C20EA38D-62BB-4D22-AE05-6141D081F909}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C20EA38D-62BB-4D22-AE05-6141D081F909}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C20EA38D-62BB-4D22-AE05-6141D081F909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22385B4D-D5D7-4153-B9A5-E00B0EA2ADE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22385B4D-D5D7-4153-B9A5-E00B0EA2ADE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22385B4D-D5D7-4153-B9A5-E00B0EA2ADE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22385B4D-D5D7-4153-B9A5-E00B0EA2ADE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

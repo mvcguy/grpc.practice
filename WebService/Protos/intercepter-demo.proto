@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option csharp_namespace = "HelloIntercepter";
+
+package dicegame;
+
+service HelloIntercepterService{
+
+	//
+	// unary call
+	//
+	rpc SendToUniverse(Message) returns (SilentReply);
+	
+	//
+	// duplex call/bi-directional stream
+	//
+	rpc CommunicateToUniverse(stream Message) returns (stream Message);
+	
+	//
+	// Server stream
+	//
+	rpc GetFromUniverse(Inquiry) returns (stream Message);
+
+	//
+	// Client stream
+	//
+	rpc UploadToUniverse(stream Tales) returns (SilentReply);
+
+
+	
+}
+
+message Message{
+	string Id = 1;
+	string Contents = 2;
+}
+
+message SilentReply{
+	string Id = 1;
+	string Contents = 2;
+}
+
+message Inquiry{
+	string Id = 1;
+	string Contents = 2;
+}
+
+message Tales{
+	string Id = 1;
+	string Contents = 2;
+}
+
+
