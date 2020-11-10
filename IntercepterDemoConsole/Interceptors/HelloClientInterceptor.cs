@@ -5,10 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace IntercepterDemoConsole
+namespace IntercepterDemoConsole.Interceptors
 {
     public class HelloClientInterceptor : Interceptor
-    {       
+    {
         public override AsyncUnaryCall<TResponse> AsyncUnaryCall<TRequest, TResponse>(TRequest request,
             ClientInterceptorContext<TRequest, TResponse> context,
             AsyncUnaryCallContinuation<TRequest, TResponse> continuation)
