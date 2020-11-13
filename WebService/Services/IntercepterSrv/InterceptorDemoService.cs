@@ -16,6 +16,29 @@ namespace WebService.Services.IntercepterSrv
             return new SilentReply { Contents = message, Id = Guid.NewGuid().ToString() };
         }
 
+        public override async Task<SilentReply> UploadToUniverse(IAsyncStreamReader<Tales> requestStream, ServerCallContext context)
+        {
+            await Task.Delay(100);
+
+            return new SilentReply
+            {
+                Id = Guid.NewGuid().ToString(),
+                Contents = $"Your request is received by universe. Hashcode: {requestStream.ReadAllAsync().GetHashCode()} "
+            };
+        }
+
+        public override async Task GetFromUniverse(Inquiry request, IServerStreamWriter<Message> responseStream,
+            ServerCallContext context)
+        {
+            await Task.Delay(100);
+
+            await responseStream.WriteAsync(new Message
+            {
+                Id = Guid.NewGuid().ToString(),
+                Contents = $"your inquiry is arrived. {Environment.NewLine} " +
+                $"\"ID: {request.Id} - {request.Contents}\""
+            });            
+        }
 
     }
 }
