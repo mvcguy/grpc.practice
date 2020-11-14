@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebService.ServerInterceptors;
+using WebService.Services.IntercepterSrv;
 using WebService.Services.PlayDiceSrv;
 
 namespace GrpcService1
@@ -18,7 +20,7 @@ namespace GrpcService1
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddGrpc();
+            services.AddGrpc(options => { options.Interceptors.Add<HelloServerInterceptor>(); });
             services.AddSingleton<ICustomersRepository, CustomersRepository>();
         }
 
@@ -37,6 +39,7 @@ namespace GrpcService1
                 endpoints.MapGrpcService<GreeterService>();
                 endpoints.MapGrpcService<CustomersMaintenanceService>();
                 endpoints.MapGrpcService<PlayDiceService>();
+                endpoints.MapGrpcService<InterceptorDemoService>();
                 endpoints.MapGet("/", async context =>
                 {
                     await context.Response.WriteAsync("Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");

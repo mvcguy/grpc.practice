@@ -2,6 +2,7 @@
 using System;
 using Grpc.Core;
 using System.Threading.Tasks;
+using CommonLibrary;
 
 namespace ClientAppConsole.Apps
 {
@@ -28,10 +29,10 @@ namespace ClientAppConsole.Apps
             {
                 var newCustomer = new CreateCustomerRequest
                 {
-                    FirstName = RandomString(10),
-                    LastName = RandomString(5),
-                    Address = RandomString(10) + Environment.NewLine + RandomString(16),
-                    Phone = RandomDigits()
+                    FirstName = Utilities.RandomString(10),
+                    LastName = Utilities.RandomString(5),
+                    Address = Utilities.RandomString(10) + Environment.NewLine + Utilities.RandomString(16),
+                    Phone = Utilities.RandomDigits()
                 };
                 var result = await client.CreateCustomerAsync(newCustomer);
                 await Task.Delay(100);
@@ -58,24 +59,5 @@ namespace ClientAppConsole.Apps
             Console.WriteLine($"Delete All customers, result: {result.Result}, Message: {result.Message}");
         }
         
-        public static string RandomString(int length = 5)
-        {
-            var str = string.Empty;
-            for (int i = 0; i < length; i++)
-            {
-                str += (char)new Random(Guid.NewGuid().GetHashCode()).Next(97, 122);
-            }
-            return str;
-        }
-
-        public static string RandomDigits(int length = 8)
-        {
-            var str = string.Empty;
-            for (int i = 0; i < length; i++)
-            {
-                str += (char)new Random(Guid.NewGuid().GetHashCode()).Next(48, 57);
-            }
-            return str;
-        }
     }
 }

@@ -5,17 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Protos\intercepter-demo.proto" />
     <None Remove="Protos\play-dice.proto" />
   </ItemGroup>
 
   <ItemGroup>
     <Protobuf Include="Protos\customers.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\intercepter-demo.proto" GrpcServices="Server" />
     <Protobuf Include="Protos\play-dice.proto" GrpcServices="Server" />
     <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore" Version="2.27.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj" />
   </ItemGroup>
 
 </Project>
