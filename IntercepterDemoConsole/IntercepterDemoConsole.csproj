@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Protobuf Include="..\WebService\Protos\intercepter-demo.proto" GrpcServices="Client">
       <Link>Protos\intercepter-demo.proto</Link>
     </Protobuf>
