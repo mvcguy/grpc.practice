@@ -1,27 +1,43 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Protos\intercepter-demo.proto" />
-    <None Remove="Protos\play-dice.proto" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="Protos\intercepter-demo.proto" />
+		<None Remove="Protos\play-dice.proto" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Protobuf Include="Protos\customers.proto" GrpcServices="Server" />
-    <Protobuf Include="Protos\intercepter-demo.proto" GrpcServices="Server" />
-    <Protobuf Include="Protos\play-dice.proto" GrpcServices="Server" />
-    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
-  </ItemGroup>
+	<ItemGroup>
+		<Protobuf Include="Protos\customers.proto" GrpcServices="Server" />
+		<Protobuf Include="Protos\intercepter-demo.proto" GrpcServices="Server" />
+		<Protobuf Include="Protos\play-dice.proto" GrpcServices="Server" />
+		<Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="2.27.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Grpc.AspNetCore" Version="2.27.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.10" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
 
 </Project>
