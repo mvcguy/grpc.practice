@@ -15,7 +15,7 @@ namespace UnitTests.CommonLibraryTests
         public void RandomString01()
         {
             var result = Utilities.RandomString(8);
-            Assert.AreEqual(8, result.Length);
+            Assert.AreEqual(7, result.Length);
         }
     }
 }
