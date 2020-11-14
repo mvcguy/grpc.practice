@@ -18,7 +18,10 @@ namespace CommonLibrary
         public string GetToken(string email)
         {
             var claims = new[] { new Claim(ClaimTypes.Email, email) };
-            var token = new JwtSecurityToken(claims: claims, expires: DateTime.Now.AddMinutes(90),
+            var token = new JwtSecurityToken(issuer: "http://localhost/",
+                audience: "grpc-auth-demo-console",
+                claims: claims,
+                expires: DateTime.Now.AddMinutes(90),
                 signingCredentials: credentials);
 
             return jwtSecurityTokenHandler.WriteToken(token);
