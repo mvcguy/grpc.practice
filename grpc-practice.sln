@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChannelSampleConsole", "Cha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntercepterDemoConsole", "IntercepterDemoConsole\IntercepterDemoConsole.csproj", "{22385B4D-D5D7-4153-B9A5-E00B0EA2ADE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLibrary", "CommonLibrary\CommonLibrary.csproj", "{EC54BCF8-C7C6-437C-BE2A-67B5986CF324}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonLibrary", "CommonLibrary\CommonLibrary.csproj", "{EC54BCF8-C7C6-437C-BE2A-67B5986CF324}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{9A835E93-5A8B-4C9C-8CB1-D86F6530739C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{EC54BCF8-C7C6-437C-BE2A-67B5986CF324}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC54BCF8-C7C6-437C-BE2A-67B5986CF324}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC54BCF8-C7C6-437C-BE2A-67B5986CF324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A835E93-5A8B-4C9C-8CB1-D86F6530739C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A835E93-5A8B-4C9C-8CB1-D86F6530739C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A835E93-5A8B-4C9C-8CB1-D86F6530739C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A835E93-5A8B-4C9C-8CB1-D86F6530739C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
