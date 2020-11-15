@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntercepterDemoConsole", "I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonLibrary", "CommonLibrary\CommonLibrary.csproj", "{EC54BCF8-C7C6-437C-BE2A-67B5986CF324}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{9A835E93-5A8B-4C9C-8CB1-D86F6530739C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{9A835E93-5A8B-4C9C-8CB1-D86F6530739C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcAuthDemoConsole", "GrpcAuthDemoConsole\GrpcAuthDemoConsole.csproj", "{D99A223B-05FC-4E9C-9BE5-6CE25D7489DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{9A835E93-5A8B-4C9C-8CB1-D86F6530739C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A835E93-5A8B-4C9C-8CB1-D86F6530739C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A835E93-5A8B-4C9C-8CB1-D86F6530739C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D99A223B-05FC-4E9C-9BE5-6CE25D7489DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D99A223B-05FC-4E9C-9BE5-6CE25D7489DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D99A223B-05FC-4E9C-9BE5-6CE25D7489DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D99A223B-05FC-4E9C-9BE5-6CE25D7489DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

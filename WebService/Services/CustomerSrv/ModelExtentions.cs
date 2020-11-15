@@ -1,6 +1,7 @@
 ﻿using System;
+using WebService.CustomersProtos;
 
-namespace GrpcService1.Services.CustomerSrv
+namespace WebService.Services.CustomerSrv
 {
     public static class ModelExtentions
     {

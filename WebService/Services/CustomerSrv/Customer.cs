@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GrpcService1.Services.CustomerSrv
+namespace WebService.Services.CustomerSrv
 {
     public class Customer
     {
