@@ -1,9 +1,9 @@
 ﻿using Grpc.Core;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
+using WebService.CustomersProtos;
 
-namespace GrpcService1.Services.CustomerSrv
+namespace WebService.Services.CustomerSrv
 {
     public class CustomersMaintenanceService : CustomersMaintenance.CustomersMaintenanceBase
     {
@@ -73,7 +73,7 @@ namespace GrpcService1.Services.CustomerSrv
 
         }
 
-        public override async Task<DeleteAllCustomersResponse> DeleteAllCustomers(DeleteAllCustomersRequest request, 
+        public override async Task<DeleteAllCustomersResponse> DeleteAllCustomers(DeleteAllCustomersRequest request,
             ServerCallContext context)
         {
             if (await repository.DeleteAllCustomers())

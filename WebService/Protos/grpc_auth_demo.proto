@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option csharp_namespace = "WebService.Protos.GrpcAuthDemo";
-
-package GrpcAuthDemo;
-
-service GrpcAuthDemoService{
-	
-}

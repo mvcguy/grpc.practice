@@ -62,11 +62,9 @@ namespace CommonLibrary.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;RSAKeyValue&gt;
-        ///	&lt;Modulus&gt;wjVr7bbkHIYUdwUdXx2jx7usS7locwMztGTKKZ9bCvWU5/lmI11eAiSB/a25CzKihT7R116G7/+I9zHCTnGhnKokqZRnsQ35StscegnN+VtJkogfpxi1VXp+OYeEsYx3OWOgj5MixT92Mokb0NmeE7oMzgH8NJfS0Vv9HinHJ9E=&lt;/Modulus&gt;
+        ///	&lt;Modulus&gt;9+hZCiZrVpqe1t+Q4HOfzrmmkNkNPurX3btOva9Hdx1lIKV7ndeVGCq71plXhW78krXdcDSSeOEVf8W51/Qq0ai8Rg9P1XIcedVgIj7MiHZ+k/rcnq1Y9yg6d1DHXtlAJLasvhCc3o+9inXh2DAzllIxyy4FabS51dRyWDBMA2LS8kS3o5UdcVQYoY+B/9d8qVHmlbQNuao3NL/UqVo6UKnGidSjTQMyPkPJEmpul9C3Cn8Tm7zqKidk2A/obU5bmBFfivhPGoFnahYMs635LpitEPdJGQCfzcmLyE9y23cPyPzowkB/zsONCgWoxglst95vKRWgyXgBXAiSbKtaFQ==&lt;/Modulus&gt;
         ///	&lt;Exponent&gt;AQAB&lt;/Exponent&gt;
-        ///	&lt;P&gt;4DLM4gop5d38NWYCWALU+yIJCNaNBvBlzMo0Q04STcQvzs3vSgZO55jxrojB2Z9g+ln32qcb8S5D178tvKsd4w==&lt;/P&gt;
-        ///	&lt;Q&gt;3cGecMWSNC1dhDVy7YjPeFn5cR69EPvVp9PljlZ/OQpjPaDZZJVZ7h1USGDYPH6+41TZ9IiMDXS+TK0M4rbRuw==&lt;/Q&gt;
-        ///	&lt;DP&gt;Tb6P+ZpYqRNvT/0NtwNUY7mLtHrh8JQQWRGNSgGaq0jq4yXaYqsJVZpdxI472oFAGdB0+GeWcu [rest of string was truncated]&quot;;.
+        ///	&lt;P&gt;/dJVFnxsOJsSZpeK698QH7x/j9UeLlYrWuRsC6BTyPs/YE+aWiZpRkjz6uZcgkCeNVwxU8IdGukyrt87dcgrwuE/QM02ZqINZ65 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string RsaProps {
             get {

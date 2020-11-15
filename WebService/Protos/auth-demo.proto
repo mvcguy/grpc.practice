@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcAuthDemo";
+
+package AuthDemo;
+
+service GrpcAuthDemoService{
+	rpc GetAccountBalance(AccountInquiry) returns (AccountInquiryResponse);
+}
+
+message AccountInquiry{
+	string AccountNumber = 1;
+	string Hash = 2;
+}
+
+message AccountInquiryResponse{
+	string AccountNumber = 1;
+	int32 AccountBalance = 2;
+	int32 AccountBalanceDecimal = 3;
+	string Hash = 4;
+}

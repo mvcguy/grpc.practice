@@ -1,8 +1,10 @@
-﻿namespace CommonLibrary
+﻿using System.Threading.Tasks;
+
+namespace CommonLibrary
 {
     public interface ITokenSource
     {
-        string GetToken(string email);
+        Task<string> GetTokenAsync(string email);
     }
 }
 
