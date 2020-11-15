@@ -27,6 +27,7 @@ namespace WebService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddGrpc(options => { options.Interceptors.Add<HelloServerInterceptor>(); });
+            services.AddGrpcReflection();
             services.AddSingleton<ICustomersRepository, CustomersRepository>();
             services.AddSingleton<JwtSecurityTokenHandler>();
             services.AddSingleton<ITokenSource, FakeTokenSource>();
@@ -75,6 +76,7 @@ namespace WebService
                     endpoints.MapGrpcService<PlayDiceService>();
                     endpoints.MapGrpcService<InterceptorDemoService>();
                     endpoints.MapGrpcService<GrpcAuthDemoServImpl>();
+                    endpoints.MapGrpcReflectionService();
 
                     endpoints.MapGet("/jwt/token", async context =>
                     {
